@@ -81,6 +81,13 @@
             font-size: 12px;
             text-align: center;
         }
+        .note {
+            background: #f6fbff;
+            border-left: 4px solid #0f4c81;
+            padding: 12px 14px;
+            margin: 14px 0;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -97,7 +104,7 @@
             German version: <a href="../../datenschutz/">Datenschutzerklaerung</a>
         </div>
 
-        <p><strong>Effective date:</strong> April 15, 2026 | <strong>Version:</strong> 1.0</p>
+        <p><strong>Effective date:</strong> April 20, 2026 | <strong>Version:</strong> 1.1</p>
 
         <h2>1. Controller</h2>
         <p>
@@ -112,7 +119,7 @@
             <li>Profile data (display name, avatar, language settings)</li>
             <li>Learning data (folders, questions, answers, progress)</li>
             <li>Upload data (file metadata and uploaded content)</li>
-            <li>AI processing data (selected text parts and generated output)</li>
+            <li>AI processing data (selected text parts, prompts/instructions, generation settings, generated output)</li>
             <li>Technical data (app settings, notification/session state)</li>
         </ul>
 
@@ -121,6 +128,7 @@
             <li>Contract performance (Art. 6(1)(b) GDPR): app functionality and account services</li>
             <li>Legitimate interests (Art. 6(1)(f) GDPR): security, abuse prevention, stability</li>
             <li>Consent (Art. 6(1)(a) GDPR): push notifications where required</li>
+            <li>Consent (Art. 6(1)(a) GDPR): third-party AI processing for AI features</li>
             <li>Legal obligations (Art. 6(1)(c) GDPR): where applicable</li>
         </ul>
 
@@ -131,10 +139,25 @@
             <li>Firebase Storage</li>
             <li>Cloud Functions</li>
             <li>Firebase Cloud Messaging</li>
-            <li>Google Gemini API</li>
+            <li>Google Cloud Vertex AI (Gemini)</li>
         </ul>
 
-        <h2>5. Retention</h2>
+        <h2>5. AI Consent and Third-Party Processing</h2>
+        <div class="note">
+            Before any AI feature is used, the app requests explicit user consent in-app.
+            Without consent, no data is sent to the third-party AI service.
+        </div>
+        <p>
+            If consent is granted, selected study content (for example extracted text from PDF/PPTX),
+            user prompts/instructions, and generation settings (such as language and question format)
+            may be sent to Google Cloud Vertex AI (Gemini) to generate study material.
+        </p>
+        <p>
+            Users can revoke this consent at any time in app settings.
+            After revocation, AI transfers are blocked until consent is granted again.
+        </p>
+
+        <h2>6. Retention</h2>
         <ul>
             <li>Account/profile data: until account deletion</li>
             <li>Learning data: until user deletion or account deletion</li>
@@ -142,29 +165,30 @@
             <li>Technical logs: only as long as operationally necessary</li>
         </ul>
 
-        <h2>6. Your Rights</h2>
+        <h2>7. Your Rights</h2>
         <p>
             You may request access, correction, deletion, restriction, portability, and objection.
             Contact: <a href="mailto:procrash94@gmail.com">procrash94@gmail.com</a>
         </p>
 
-        <h2>7. International Transfers</h2>
+        <h2>8. International Transfers</h2>
         <p>
             If data is processed outside the EEA, transfer safeguards such as contractual protections are applied.
         </p>
 
-        <h2>8. AI Transparency</h2>
+        <h2>9. AI Transparency</h2>
         <p>
-            Uploaded content can be automatically processed to generate study material. AI output may be imperfect and should be reviewed by the user.
+            Uploaded content can be automatically processed to generate study material.
+            AI output may be imperfect and should be reviewed by the user.
         </p>
 
-        <h2>9. Complaints</h2>
+        <h2>10. Complaints</h2>
         <p>
             You can file a complaint with a competent data protection authority.
         </p>
 
         <div class="footer">
-            Last updated: April 15, 2026
+            Last updated: April 20, 2026
         </div>
     </div>
 </body>
